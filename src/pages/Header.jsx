@@ -1,31 +1,47 @@
-import { Sun,Moon } from "lucide-react";
+import { Sun, Moon } from "lucide-react";
+import useTheme from "../context/Theme";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
+  const { themeMode, toggleTheme } = useTheme();
+  const navLinkClass = ({ isActive }) =>
+    `font-mono text-xs font-light md:text-sm whitespace-nowrap rounded-md px-3 py-1.5 transition-colors ${
+      isActive
+        ? "dark:bg-dark-acc-li dark:text-dark-accent light:bg-light-acc-li light:text-light-accent"
+        : "dark:text-dark-text light:text-light-text dark:hover:bg-dark-border light:hover:bg-light-border"
+    }`;
+
   return (
-    <header className="sticky top-0 z-50 border-b border-dark-border bg-dark-surface backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b backdrop-blur-md dark:border-dark-border dark:bg-dark-surface light:border-light-border light:bg-light-surface">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <nav className="flex items-center gap-1 overflow-x-auto">
-          <li className="font-mono text-base list-none whitespace-nowrap rounded-md px-3 py-1.5 text-dark-text">
+          <NavLink to="/" className={navLinkClass}>
             Home
-          </li>
-          <li className="font-mono text-base list-none whitespace-nowrap rounded-md px-3 py-1.5 text-dark-text">
+          </NavLink>
+          <NavLink to="/about" className={navLinkClass}>
             About
-          </li>
-          <li className="font-mono text-base list-none whitespace-nowrap rounded-md px-3 py-1.5 text-dark-text">
+          </NavLink>
+          <NavLink to="/journey" className={navLinkClass}>
             Journey
-          </li>
-          <li className="font-mono text-base list-none whitespace-nowrap rounded-md px-3 py-1.5 text-dark-text">
+          </NavLink>
+          <NavLink to="/skills" className={navLinkClass}>
             Skills
-          </li>
-          <li className="font-mono text-base list-none whitespace-nowrap rounded-md px-3 py-1.5 text-dark-text">
+          </NavLink>
+          <NavLink to="/projects" className={navLinkClass}>
             Projects
-          </li>
-          <li className="font-mono text-base list-none whitespace-nowrap rounded-md px-3 py-1.5 text-dark-text">
-            Contect
-          </li>
+          </NavLink>
+          <NavLink to="/contact" className={navLinkClass}>
+            Contact
+          </NavLink>
         </nav>
-        <button>
-          {/* {mode === "dark" ? <Sun size={16}/> : <Moon size={16}/>} */}
+        <button
+          type="button"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${themeMode === "dark" ? "light" : "dark"} mode`}
+          title={`Switch to ${themeMode === "dark" ? "light" : "dark"} mode`}
+          className="rounded-md p-2 transition-colors focus:outline-none focus:ring-2 dark:text-dark-text dark:hover:bg-dark-border dark:focus:ring-dark-text light:text-light-text light:hover:bg-light-border light:focus:ring-light-text"
+        >
+          {themeMode === "dark" ? <Sun size={16} /> : <Moon size={16} />}
         </button>
       </div>
     </header>

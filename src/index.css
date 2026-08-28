@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
+
 @theme {
   --color-light-bg: #F6F7FA;
   --color-light-surface: #FFFFFF;
@@ -7,6 +10,7 @@
   --color-light-textMuted: #666A76;
   --color-light-border: #E3E5EB;
   --color-light-accent: #3457D5;
+  --color-light-acc-li: #3457D51f;
   --color-light-accent2: #7C3AED;
   --color-light-accentSoft: rgba(52,87,213,0.08);
 
@@ -16,6 +20,33 @@
   --color-dark-textMuted: #8D909C;
   --color-dark-border: #242833;
   --color-dark-accent: #6C8CFF;
+  --color-dark-acc-li: #6C8CFF1f;
   --color-dark-accent2: #B58CFF;
   --color-dark-accentSoft: rgba(108,140,255,0.12);
 }
+
+
+:root {
+  --color-light-bg: #F6F7FA;
+  --color-light-surface: #FFFFFF;
+  --color-light-text: #14161B;
+  --color-light-textMuted: #666A76;
+  --color-light-border: #E3E5EB;
+  --color-light-accent: #3457D5;
+  --color-light-acc-li: #3457d55d;
+  --color-light-accent2: #7C3AED;
+  --color-light-accentSoft: rgba(52,87,213,0.08);
+
+  --color-dark-bg: #0B0D11;
+  --color-dark-surface: #151821;
+  --color-dark-text: #F2F3F5;
+  --color-dark-textMuted: #8D909C;
+  --color-dark-border: #242833;
+  --color-dark-accent: #6C8CFF;
+  --color-dark-acc-li: #6C8CFF1f;
+  --color-dark-accent2: #B58CFF;
+  --color-dark-accentSoft: rgba(108,140,255,0.12);
+}
+
+
+
