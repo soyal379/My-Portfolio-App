@@ -1,27 +1,16 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./Layout";
 import Home from "./pages/Home";
 import { useState } from "react";
 import { ThemeContextProvider } from "./context/Theme";
 import { useEffect } from "react";
 import About from "./pages/About";
+import Header from "./pages/Header";
+import Journey from "./pages/Journey";
+import Skills from "./pages/Skills";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
+import Footer from "./pages/Footer";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "",
-        element: <Home />,
-      },
-      {
-        path: 'about',
-        element: <About/>
-      },
-    ],
-  },
-]);
+
 
 export default function App() {
   const [themeMode, setThemeMode] = useState("dark");
@@ -40,7 +29,18 @@ export default function App() {
 
   return (
     <ThemeContextProvider value={{ themeMode, toggleTheme }}>
-      <RouterProvider router={router} />
+     <div className="grid h-screen grid-rows-[auto_1fr] overflow-hidden">
+      <Header />
+      <main className="overflow-y-auto">
+        <Home id="home" />
+        <About id="about" />
+        <Journey id="journey" />
+        <Skills id="skills" />
+        <Projects id="projects" />
+        <Contact id="contact" />
+        <Footer />
+      </main>
+    </div>
     </ThemeContextProvider>
   );
 }

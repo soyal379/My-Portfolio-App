@@ -1,5 +1,4 @@
 import { ArrowUp } from "lucide-react"
-import { Link } from "react-router-dom"
 
 export default function Footer() {
   return (
@@ -8,9 +7,9 @@ export default function Footer() {
         <p className="font-mono text-xs dark:text-dark-textMuted light:text-light-textMuted">
           © 2026 SOYAL — built with React & Tailwind CSS
         </p>
-        <Link to='/' className="font-mono text-xs inline-flex items-center  gap-1.5">
+        <a href="#home" className="font-mono text-xs inline-flex items-center  gap-1.5">
           Back to home <ArrowUp size={13}/>
-        </Link>
+        </a>
       </div>
     </footer>
   )

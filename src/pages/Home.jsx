@@ -1,7 +1,17 @@
+import useTheme from "../context/Theme";
 
+export default function Home({id}) {
+  const { themeMode } = useTheme();
 
-export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <section
+      id={id}
+      className="h-dvh"
+    >
+
+      Home
+
+      
+    </section>
+  );
 }

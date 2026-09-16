@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function About({id}) {
+function Projects({id}) {
   return (
     <section id={id} className='h-dvh'>
-      About
+        projects
     </section>
   )
 }
+
+export default Projects

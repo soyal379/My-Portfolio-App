@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function About({id}) {
+function Journey({id}) {
   return (
     <section id={id} className='h-dvh'>
-      About
+        journey
     </section>
   )
 }
+
+export default Journey

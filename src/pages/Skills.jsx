@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function About({id}) {
+function Skills({id}) {
   return (
     <section id={id} className='h-dvh'>
-      About
+      Skills
     </section>
   )
 }
+
+export default Skills
