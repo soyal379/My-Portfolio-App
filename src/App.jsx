@@ -29,18 +29,18 @@ export default function App() {
 
   return (
     <ThemeContextProvider value={{ themeMode, toggleTheme }}>
-     <div className="grid h-screen grid-rows-[auto_1fr] overflow-hidden">
-      <Header />
-      <main className="overflow-y-auto">
-        <Home id="home" />
-        <About id="about" />
-        <Journey id="journey" />
-        <Skills id="skills" />
-        <Projects id="projects" />
-        <Contact id="contact" />
-        <Footer />
-      </main>
-    </div>
+      <div className="min-h-screen dark:bg-dark-bg light:bg-light-bg dark:text-dark-text light:text-light-text">
+        <Header />
+        <main>
+          <Home id="home" />
+          <About id="about" />
+          <Journey id="journey" />
+          <Skills id="skills" />
+          <Projects id="projects" />
+          <Contact id="contact" />
+          <Footer />
+        </main>
+      </div>
     </ThemeContextProvider>
   );
 }
