@@ -12,7 +12,7 @@
   --color-light-accent: #3457D5;
   --color-light-acc-li: #3457D51f;
   --color-light-accent2: #7C3AED;
-  --color-light-accentSoft: rgba(52,87,213,0.08);
+  --color-light-accentSoft: rgba(52, 87, 213, 0.08);
 
   --color-dark-bg: #0B0D11;
   --color-dark-surface: #151821;
@@ -22,7 +22,7 @@
   --color-dark-accent: #6C8CFF;
   --color-dark-acc-li: #6C8CFF1f;
   --color-dark-accent2: #B58CFF;
-  --color-dark-accentSoft: rgba(108,140,255,0.12);
+  --color-dark-accentSoft: rgba(108, 140, 255, 0.12);
 }
 
 
@@ -35,7 +35,7 @@
   --color-light-accent: #3457D5;
   --color-light-acc-li: #3457d55d;
   --color-light-accent2: #7C3AED;
-  --color-light-accentSoft: rgba(52,87,213,0.08);
+  --color-light-accentSoft: rgba(52, 87, 213, 0.08);
 
   --color-dark-bg: #0B0D11;
   --color-dark-surface: #151821;
@@ -45,7 +45,7 @@
   --color-dark-accent: #6C8CFF;
   --color-dark-acc-li: #6C8CFF1f;
   --color-dark-accent2: #B58CFF;
-  --color-dark-accentSoft: rgba(108,140,255,0.12);
+  --color-dark-accentSoft: rgba(108, 140, 255, 0.12);
 }
 
 
@@ -67,4 +67,21 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   scroll-behavior: smooth;
+}
+
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+.orb-float {
+  animation: float 8s ese-in-out infinite;
 }

@@ -10,8 +10,6 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
 
-
-
 export default function App() {
   const [themeMode, setThemeMode] = useState("dark");
 

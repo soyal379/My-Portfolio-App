@@ -2,21 +2,25 @@ import useTheme from "../context/Theme";
 
 export default function Home({ id }) {
   const { themeMode } = useTheme();
+  const orbOpacity = themeMode === "dark" ? 0.18 : 0.12;
+  const orbOpacitySecondary = themeMode === "dark" ? 0.14 : 0.1;
 
-  const orb = `absolute rounded-full blur-[60px] pointer-events-none`;
+  const orb = `absolute rounded-full blur-[60px] pointer-events-none orb-float `;
 
   return (
-    <section id={id} className="h-dvh relative overflow-hidden ">
-      <style>
-        {`
-        @keyframes float {
-        0%, 100% {transform: translateY(0px);}
-        50% {transform: translateY(-18px);}
-        }
-        `}
-      </style>
-      <div className={`${orb} w-80 h-80 -top-20 -right-15 float- `}></div>
-      <div className={`${orb} w-65 h-65 -bottom-65 -left-15  `}></div>
+    <section id={id} className="relative min-h-screen overflow-hidden">
+      <div
+        className={`${orb} w-[clamp(140px,45vw,320px)] h-[clamp(140px,45vw,320px)] -top-20 -right-15 dark:bg-dark-accent light:bg-light-accent  `}
+        style={{
+          opacity: orbOpacity,
+        }}
+      ></div>
+      <div
+        className={`${orb} w-[clamp(120px,45vw,260px)] h-[clamp(120px,45vw,260px)] -bottom-15 -left-14 dark:bg-dark-accent2 light:bg-light-accent2`}
+        style={{
+          opacity: orbOpacitySecondary,
+        }}
+      ></div>
     </section>
   );
 }

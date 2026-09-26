@@ -2,7 +2,7 @@ import React from 'react'
 
 function Journey({id}) {
   return (
-    <section id={id} className='h-dvh'>
+    <section id={id} className='min-h-screen'>
         journey
     </section>
   )
