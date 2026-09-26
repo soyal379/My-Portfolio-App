@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 @custom-variant light (&:where(.light, .light *));
 
 @theme {
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", monospace;
+
   --color-light-bg: #F6F7FA;
   --color-light-surface: #FFFFFF;
   --color-light-text: #14161B;
@@ -84,4 +88,22 @@ body {
 
 .orb-float {
   animation: float 8s ese-in-out infinite;
+}
+
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink{
+  animation: blink 1s step-start infinite;
 }
