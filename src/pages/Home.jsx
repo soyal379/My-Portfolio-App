@@ -34,7 +34,7 @@ export default function Home({ id }) {
         style={{ opacity: orbOpacitySecondary }}
       ></div>
 
-      <div className="max-w-6xl mx-auto mt-20 relative px-6">
+      <div className="max-w-6xl mx-auto mt-20 relative px-6 ">
         <p className="font-mono text-[clamp(0.75rem,1.4vw,0.875rem)] mb-4 flex items-center gap-2 text-light-accent dark:text-dark-accent">
           <Code2 size={14} /> &lt;FrontendDeveloper /&gt;
         </p>
