@@ -7,7 +7,7 @@ export default function StateCard({ stat }) {
 
   return (
     <div ref={ref} className="px-3 text-center">
-      <p className="font-display text-[clamp(2rem,6vw,3rem)] font-semibold text-light-accent dark:text-dark-accent">
+      <p className="font-display text-[clamp(1.8rem,6vw,2.6rem)] font-semibold text-light-accent dark:text-dark-accent">
         {value}
         {stat.suffix}
       </p>

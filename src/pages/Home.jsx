@@ -54,21 +54,21 @@ export default function Home({ id }) {
           turning clean code into products people enjoy using.
         </p>
 
-        <div className="flex flex-wrap gap-3 mb-10">
+        <div className="flex flex-wrap gap-3 mb-14">
           <button
             onClick={() => scrollTo("projects")}
-            className="font-mono text-[clamp(0.8rem,1.8vw,0.875rem)] px-5 py-2.5 rounded-md font-medium flex items-center gap-1.5 transition duration-200 ease-in-out hover:opacity-90 hover:-translate-y-0.5 bg-linear-to-r from-light-accent to-light-accent2 dark:from-dark-accent dark:to-dark-accent2 text-white shadow-sm"
+            className="font-mono text-[clamp(0.8rem,1.8vw,0.875rem)] px-5 py-2.5 rounded-md font-medium flex items-center gap-1.5 transition duration-200 ease-in-out hover:opacity-90 hover:-translate-y-0.5 bg-linear-to-r from-light-accent to-light-accent2 dark:from-dark-accent dark:to-dark-accent2 text-white shadow-sm cursor-pointer"
           >
             View Projects <ChevronRight size={15} />
           </button>
           <button
             onClick={() => scrollTo("contact")}
-            className="font-mono text-[clamp(0.8rem,1.8vw,0.875rem)] px-5 py-2.5 rounded-md font-medium text-light-textMuted dark:text-dark-textMuted"
+            className="font-mono cursor-pointer  border border-line text-[clamp(0.8rem,1.8vw,0.875rem)] px-5 py-2.5 rounded-md font-medium  transition-colors hover:dark:border-dark-accent hover:dark:text-dark-accent hover:border-light-accent hover:text-light-accent"
           >
             Get in Touch
           </button>
         </div>
-        <div className="grid max-w-xl grid-cols-2 gap-4 mb-30 border-t border-line pt-8 md:grid-cols-4 text-light-textMuted dark:text-dark-textMuted">
+        <div className="grid max-w-xl grid-cols-2 gap-4 mb-30 border-t border-line pt-10 md:grid-cols-4 text-light-textMuted dark:text-dark-textMuted">
           {STATS.map((s) => (
             <StateCard key={s.label} stat={s} />
           ))}
