@@ -1,15 +1,8 @@
 import { Sun, Moon, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import useTheme from "../context/Theme";
+import {NAV_LINKS} from "../data.js"
 
-const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Journey", href: "#journey" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
-];
 
 export default function Header() {
   const { themeMode, toggleTheme } = useTheme();
@@ -69,7 +62,7 @@ export default function Header() {
   
         <nav className="hidden items-center gap-1 md:flex">
           {NAV_LINKS.map((link) => (
-            <a key={link.href} href={link.href} className={navLinkClass}>
+            <a key={link.label} href={link.href} className={navLinkClass}>
               {link.label}
             </a>
           ))}
@@ -111,7 +104,7 @@ export default function Header() {
           <div className="flex flex-col gap-1 px-3 pb-3 sm:px-6">
             {NAV_LINKS.map((link) => (
               <a
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 tabIndex={menuOpen ? 0 : -1}
                 onClick={() => setMenuOpen(false)}

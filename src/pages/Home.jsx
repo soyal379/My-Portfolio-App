@@ -1,14 +1,9 @@
-import { ChevronDown, ChevronRight, Code2, Download } from "lucide-react";
+import { ChevronRight, Code2 } from "lucide-react";
 import useTheme from "../context/Theme";
 import useTypewriter from "../costomHooks/useTypewriter";
 import useScrollTo from "../costomHooks/scrollTo";
-
-const roles = [
-  "Frontend Developer",
-  "React Enthusiast",
-  "UI Craftsman",
-  "Problem Solver",
-];
+import { roles, STATS } from "../data.js";
+import StateCard from "../components/StateCard.jsx";
 
 export default function Home({ id }) {
   const scrollTo = useScrollTo();
@@ -24,7 +19,7 @@ export default function Home({ id }) {
   const orb = `absolute rounded-full blur-[60px] pointer-events-none orb-float `;
 
   return (
-    <section id={id} className="relative min-h-screen overflow-hidden">
+    <section id={id} className="relative min-h-auto overflow-hidden">
       <div
         className={`${orb} w-[clamp(140px,45vw,320px)] h-[clamp(140px,45vw,320px)] -top-20 -right-16 bg-light-accent dark:bg-dark-accent`}
         style={{ opacity: orbOpacity }}
@@ -59,7 +54,7 @@ export default function Home({ id }) {
           turning clean code into products people enjoy using.
         </p>
 
-        <div className="flex flex-wrap gap-3 mb-14">
+        <div className="flex flex-wrap gap-3 mb-10">
           <button
             onClick={() => scrollTo("projects")}
             className="font-mono text-[clamp(0.8rem,1.8vw,0.875rem)] px-5 py-2.5 rounded-md font-medium flex items-center gap-1.5 transition duration-200 ease-in-out hover:opacity-90 hover:-translate-y-0.5 bg-linear-to-r from-light-accent to-light-accent2 dark:from-dark-accent dark:to-dark-accent2 text-white shadow-sm"
@@ -72,6 +67,11 @@ export default function Home({ id }) {
           >
             Get in Touch
           </button>
+        </div>
+        <div className="grid max-w-xl grid-cols-2 gap-4 mb-30 border-t border-line pt-8 md:grid-cols-4 text-light-textMuted dark:text-dark-textMuted">
+          {STATS.map((s) => (
+            <StateCard key={s.label} stat={s} />
+          ))}
         </div>
       </div>
     </section>
